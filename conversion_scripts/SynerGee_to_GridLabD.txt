@@ -275,6 +275,8 @@ my (%NominalVLL, %DisiredVLL) = ();
 # Open database file.
 my $dsnDev="Driver={Microsoft Access Driver (*.mdb)};Dbq=$dbDevFile;Uid=Admin;Pwd=";
 #my $dsnDev = "DSN=kihei_extract;Uid=Admin;Pwd=";
+# Possible error received is "1028[Microsoft][ODBC Microsoft Access Driver] Cannot open database '(unknown)'"
+# Ensure you have saved the db file as a Older Version through MSAccess (2002-2003 worked)
 my $db = Win32::ODBC->new($dsnDev) or die( Win32::ODBC::Error() );
 
 # Get feeder ID from database
